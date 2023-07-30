@@ -3,10 +3,10 @@ import {ThemeProps, useThemeColor} from '@/components/themed/index';
 
 export type ViewProps = ThemeProps & RNView['props'];
 
-export function View(props: ViewProps) {
+export function InvertedView(props: ViewProps) {
   const {style, lightColor, darkColor, ...otherProps} = props;
   const backgroundColor = useThemeColor(
-      {light: lightColor, dark: darkColor}, 'background',
+      {light: lightColor, dark: darkColor}, 'invertedBackground',
   );
 
   return <RNView style={[{backgroundColor}, style]} {...otherProps} />;

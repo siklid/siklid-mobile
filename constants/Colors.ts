@@ -14,16 +14,24 @@ const tintColorDark = goldenrod;
 export default {
   light: {
     text: darkGrayishBlue,
-    background: white,
+    header: darkPurple,
+
     tint: tintColorLight,
     tabIconDefault: paleLavender,
     tabIconSelected: tintColorLight,
+
+    background: white,
+    invertedBackground: peach,
   },
   dark: {
     text: white,
-    background: darkPurple,
+    header: goldenrod,
+
     tint: tintColorDark,
     tabIconDefault: paleYellow,
     tabIconSelected: tintColorDark,
+
+    background: darkPurple,
+    invertedBackground: paleLavender,
   },
 };
