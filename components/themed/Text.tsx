@@ -12,8 +12,7 @@ export function Text(props: TextProps) {
   } = props;
   const color = useThemeColor(
       {
-        light:
-        lightColor,
+        light: lightColor,
         dark: darkColor,
       },
       'text');
