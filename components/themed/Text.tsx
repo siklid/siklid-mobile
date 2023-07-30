@@ -1,4 +1,4 @@
-import {Text as RNText} from 'react-native/Libraries/Text/Text';
+import {Text as RNText} from 'react-native';
 import {ThemeProps, useThemeColor} from '@/components/themed/index';
 
 export type TextProps = ThemeProps & RNText['props'];
