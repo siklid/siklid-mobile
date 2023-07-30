@@ -15,9 +15,9 @@ export default function Welcome() {
       <View style={styles.container}>
         <StatusBar style="auto"/>
         <Pager style={styles.pager}>
-          <Input key="0"></Input>
-          <Discover key="1"></Discover>
-          <Study key="2"></Study>
+          <Input key="0"/>
+          <Discover key="1"/>
+          <Study key="2"/>
         </Pager>
       </View>
   );
