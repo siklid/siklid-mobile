@@ -32,6 +32,6 @@ export default {
     tabIconSelected: tintColorDark,
 
     background: darkPurple,
-    invertedBackground: paleLavender,
+    invertedBackground: darkPurple,
   },
 };
