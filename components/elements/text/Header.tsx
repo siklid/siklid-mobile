@@ -34,6 +34,8 @@ export function Header(props: HeaderProps) {
   const fontSize = headerSizeToNumber(size ?? 'lg');
   const fontWeight = props.weight ?? '600';
   return (
-      <Text style={[{color, fontSize, fontWeight}, style]} {...otherProps} />
+      <Text style={[
+        {color, fontSize, fontWeight},
+        style]} {...otherProps} />
   );
 }
