@@ -1,6 +1,7 @@
 const white = '#FFFFFF';
 const paleGray = '#F7F6F4';
 const goldenrod = '#FFC720';
+const orange = '#FE9F01';
 const paleYellow = '#FCEDC6';
 const peach = '#FCD9C2';
 const darkPink = '#FCDEDE';
@@ -22,6 +23,9 @@ export default {
 
     background: white,
     invertedBackground: peach,
+
+    indicator: white,
+    activeIndicator: orange,
   },
   dark: {
     text: white,
@@ -33,5 +37,8 @@ export default {
 
     background: darkPurple,
     invertedBackground: darkPurple,
+
+    indicator: white,
+    activeIndicator: goldenrod,
   },
 };
