@@ -1,7 +1,6 @@
 import {ThemeProps, useThemeColor} from '@/components/themed';
 import {StyleSheet, View} from 'react-native';
-import {Link} from '@/components/themed/Link';
-import Sizes from '@/constants/Sizes';
+import {Link} from '@/components/elements/button/Link';
 
 export type PagerIndicatorProps = ThemeProps & View['props'] & {
   pages: number;
@@ -43,7 +42,6 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     flexDirection: 'row',
-    padding: Sizes.spacing.md,
   },
   section: {
     flex: 1,
