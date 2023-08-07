@@ -19,10 +19,11 @@ export function Header(props: HeaderProps) {
   } = props;
   const color = useThemeColor({light: lightColor, dark: darkColor}, 'header');
   const fontSize = sizeToNumber(size ?? 'lg');
+  const lineHeight = fontSize * 1.5;
   const fontWeight = props.weight ?? '600';
   return (
       <Text style={[
-        {color, fontSize, fontWeight},
+        {color, fontSize, fontWeight, lineHeight},
         style]} {...otherProps} />
   );
 }
