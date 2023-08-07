@@ -1,5 +1,7 @@
 import {ThemeProps, useThemeColor} from '@/components/themed';
 import {StyleSheet, View} from 'react-native';
+import {Link} from '@/components/themed/Link';
+import Sizes from '@/constants/Sizes';
 
 export type PagerIndicatorProps = ThemeProps & View['props'] & {
   pages: number;
@@ -30,7 +32,9 @@ export function PagerIndicator(props: PagerIndicatorProps) {
           ))}
         </View>
 
-        <View style={styles.section}/>
+        <View style={[styles.section, styles.end]}>
+          <Link text="Skip"/>
+        </View>
       </View>
   );
 }
@@ -39,6 +43,7 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     flexDirection: 'row',
+    padding: Sizes.spacing.md,
   },
   section: {
     flex: 1,
@@ -49,7 +54,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
   },
-  end: {},
+  end: {
+    alignItems: 'flex-end',
+  },
   indicator: {
     width: 10,
     height: 10,
