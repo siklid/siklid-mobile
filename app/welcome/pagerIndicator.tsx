@@ -8,35 +8,48 @@ export type PagerIndicatorProps = ThemeProps & View['props'] & {
 
 export function PagerIndicator(props: PagerIndicatorProps) {
   const {style, ...otherProps} = props;
-  const color = useThemeColor({}, 'indicator');
-  const activeColor = useThemeColor({}, 'activeIndicator');
+  const themeProps = {light: props.lightColor, dark: props.darkColor};
+
+  const color = useThemeColor(themeProps, 'indicator');
+  const activeColor = useThemeColor(themeProps, 'activeIndicator');
+
+  const indicatorStyle = [styles.indicator, {backgroundColor: color}];
+  const activeStyle = [styles.indicator, {backgroundColor: activeColor}];
+
+  const buildStyle = (index: number): object[] => (
+      index === props.activePage - 1 ? activeStyle : indicatorStyle
+  );
 
   return (
-      <View style={[styles.indicatorContainer, style]}>
-        {Array.from({length: props.pages}, (_, i) => i).map((index) => (
-            <View
-                key={index}
-                style={[
-                  styles.indicator,
-                  index === props.activePage - 1
-                      ? {backgroundColor: activeColor}
-                      : {backgroundColor: color},
-                ]}
-                {...otherProps}
-            />
-        ))}
+      <View style={[styles.container, style]}>
+        <View style={styles.section}/>
+
+        <View style={[styles.section, styles.middle]}>
+          {Array.from({length: props.pages}, (_, i) => i).map((index) => (
+              <View key={index} style={buildStyle(index)}{...otherProps}/>
+          ))}
+        </View>
+
+        <View style={styles.section}/>
       </View>
   );
 }
 
 const styles = StyleSheet.create({
-  indicatorContainer: {
+  container: {
+    width: '100%',
     flexDirection: 'row',
-    height: 10,
+  },
+  section: {
+    flex: 1,
+  },
+  beginning: {},
+  middle: {
+    flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    width: '33%',
   },
+  end: {},
   indicator: {
     width: 10,
     height: 10,
