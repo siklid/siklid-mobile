@@ -25,21 +25,24 @@ export function Button(props: ButtonProps) {
   } = props;
   const themeProps = {light: props.lightColor, dark: props.darkColor};
 
-  const color = useThemeColor(themeProps, 'tabIconSelected');
+  const color = useThemeColor(themeProps, 'tint');
   const disabledColor = useThemeColor(themeProps, 'tabIconDefault');
+  const textColor = useThemeColor(themeProps, 'buttonText');
+  const height = sizeToNumber(props.size ?? 'md') * 2.1;
 
   const buttonStyle = [
     styles.button,
     style,
     {
       backgroundColor: disabled ? disabledColor : color,
+      height,
     },
   ];
 
   const textStyle = [
     styles.text,
     {
-      color: 'white',
+      color: textColor,
       fontSize: sizeToNumber(props.size ?? 'sm'),
     },
   ];
@@ -63,7 +66,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
-    minHeight: 50,
   },
   text: {},
 });
