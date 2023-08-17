@@ -23,11 +23,20 @@ export default function Input(props: WelcomePageProps) {
         </View>
 
         <View style={styles.imageContainer}>
-          <Image
-              source={require('@/assets/images/welcome/input.svg')}
-              style={styles.image}
-              contentFit={'contain'}
-          />
+          {props.theme === 'light' && (
+              <Image
+                  source={require(`@/assets/images/welcome/input-light.svg`)}
+                  style={styles.image}
+                  contentFit={'contain'}
+              />
+          )}
+          {props.theme === 'dark' && (
+              <Image
+                  source={require(`@/assets/images/welcome/input-dark.svg`)}
+                  style={styles.image}
+                  contentFit={'contain'}
+              />
+          )}
         </View>
 
         <View style={styles.buttonContainer}>
