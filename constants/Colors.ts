@@ -26,6 +26,8 @@ export default {
 
     indicator: white,
     activeIndicator: orange,
+    
+    buttonText: white,
   },
   dark: {
     text: white,
@@ -40,5 +42,7 @@ export default {
 
     indicator: white,
     activeIndicator: goldenrod,
+
+    buttonText: darkPurple,
   },
 };
