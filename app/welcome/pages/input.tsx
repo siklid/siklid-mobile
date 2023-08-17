@@ -7,6 +7,7 @@ import {PagerIndicator} from '@/app/welcome/pagerIndicator';
 import {Image} from 'expo-image';
 import Sizes from '@/constants/Sizes';
 import Colors from '@/constants/Colors';
+import {Button} from '@/components/elements/button/Button';
 
 export default function Input(props: WelcomePageProps) {
   return (
@@ -30,7 +31,9 @@ export default function Input(props: WelcomePageProps) {
         </View>
 
         <View style={styles.buttonContainer}>
-
+          <View style={styles.button}>
+            <Button text="Get Started"/>
+          </View>
         </View>
       </InvertedView>
   );
@@ -79,5 +82,11 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     borderTopLeftRadius: Sizes.radius.xl * 2 + 7,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  button: {
+    width: Sizes.device.width / 2,
   },
 });
