@@ -1,8 +1,3 @@
-// write a react native typescript function component that works as a Link component
-// that takes an element as a child and onPress as a prop
-// it could be disabled or not. if it is disabled, it should not be clickable
-// it could be underlined or not. if it is underlined, it should have a line under it
-
 import React from 'react';
 import {StyleSheet, TouchableOpacity} from 'react-native';
 import {
